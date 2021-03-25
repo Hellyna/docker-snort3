@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+
+snort -Q -c /etc/snort/snort.lua --tweaks local -l /var/log/snort

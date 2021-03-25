@@ -1,0 +1,2 @@
+#pulledpork will put rules here in snort.rules
+#alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+iptables -D FORWARD -j NFQUEUE --queue-bypass
+iptables -I FORWARD -j NFQUEUE --queue-bypass
+ip6tables -D FORWARD -j NFQUEUE --queue-bypass
+ip6tables -I FORWARD -j NFQUEUE --queue-bypass
