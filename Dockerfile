@@ -2,11 +2,11 @@ ARG ALPINE_VERSION=latest
 
 FROM alpine:$ALPINE_VERSION
 
-ARG CPPFLAGS="-D_FORTIFY_SOURCE=2" \
-  CFLAGS="-mtune=generic -O2 -pipe -fno-plt" \
-  CXXFLAGS="-mtune=generic -O2 -pipe -fno-plt" \
-  LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now" \
-  MAKEFLAGS="-j4"
+ARG CPPFLAGS="-D_FORTIFY_SOURCE=2"
+ARG CFLAGS="-mtune=generic -O2 -pipe -fno-plt"
+ARG CXXFLAGS="-mtune=generic -O2 -pipe -fno-plt"
+ARG LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
+ARG MAKEFLAGS="-j4"
 
 WORKDIR /root
 
@@ -217,8 +217,7 @@ RUN apk add --no-cache curl fcron && \
   apk del curl && \
   cd && rm -rf pulledpork-*
 
-ARG FREP_VERSION=1.3.12 \
-  S6_OVERLAY_VERSION=2.2.0.3
+ARG S6_OVERLAY_VERSION=2.2.0.3
 RUN apk add --no-cache curl && \
   curl -sSL "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-amd64.tar.gz" | tar -xzf - -C / && \
   apk del --no-cache curl
