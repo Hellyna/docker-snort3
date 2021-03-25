@@ -228,9 +228,4 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
   S6_KILL_GRACETIME=6000
 
 COPY rootfs /
-
-# Dependencies needed to build
-# https://github.com/gperftools/gperftools
-
-# https://snort.org/downloads/snortplus/libdaq-${LIBDAQ_VERSION}.tar.gz
-# Makedepends: ca-certificates
+ENTRYPOINT ["/init"]
