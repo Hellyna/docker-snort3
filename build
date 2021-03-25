@@ -4,4 +4,5 @@ NB_CORES=$(grep -c '^processor' /proc/cpuinfo)
 export MAKEFLAGS="-j$((NB_CORES+1)) -l${NB_CORES}"
 export DOCKER_BUILDKIT=1
 
-docker build --pull --build-arg "MAKEFLAGS=${MAKEFLAGS}" -t quiexotic/snort-nfqueue .
+docker build --pull --build-arg "MAKEFLAGS=${MAKEFLAGS}" -t quiexotic/snort3 .
+docker push quiexotic/snort3
