@@ -14,6 +14,8 @@ RUN echo && echo ':: Installing dependencies' && \
   apk add --no-cache \
     flatbuffers \
     hyperscan \
+    iptables \
+    ip6tables \
     libdnet \
     libmnl \
     libnetfilter_queue \
