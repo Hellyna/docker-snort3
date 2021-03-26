@@ -6,7 +6,7 @@ ARG CPPFLAGS="-D_FORTIFY_SOURCE=2"
 ARG CFLAGS="-mtune=generic -O2 -pipe -fno-plt"
 ARG CXXFLAGS="-mtune=generic -O2 -pipe -fno-plt"
 ARG LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
-ARG MAKEFLAGS="-j4"
+ARG MAKEFLAGS="-j1"
 
 WORKDIR /root
 
