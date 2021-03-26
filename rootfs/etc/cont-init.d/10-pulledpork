@@ -1,1 +1,7 @@
-../periodic/daily/10-pulledpork
+#!/usr/bin/with-contenv sh
+
+if test "$SNORT_PULLEDPORK_ON_START" -eq 1; then
+  ../periodic/daily/10-pulledpork
+fi
+
+# vim: ft=sh:

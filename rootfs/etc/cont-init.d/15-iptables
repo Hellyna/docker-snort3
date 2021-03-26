@@ -1,6 +1,16 @@
-#!/bin/sh
+#!/usr/bin/with-contenv sh
 
-iptables -D FORWARD -j NFQUEUE --queue-bypass
-iptables -I FORWARD -j NFQUEUE --queue-bypass
-ip6tables -D FORWARD -j NFQUEUE --queue-bypass
-ip6tables -I FORWARD -j NFQUEUE --queue-bypass
+if test "$SNORT_FILTER_IPTABLES_FORWARD" -eq 1; then
+  iptables -D FORWARD -j NFQUEUE --queue-bypass
+  iptables -I FORWARD -j NFQUEUE --queue-bypass
+  ip6tables -D FORWARD -j NFQUEUE --queue-bypass
+  ip6tables -I FORWARD -j NFQUEUE --queue-bypass
+fi
+
+if test "$SNORT_FILTER_IPTABLES_INPUT" -eq 1; then
+  iptables -D INPUT -j NFQUEUE --queue-bypass
+  iptables -I INPUT -j NFQUEUE --queue-bypass
+  ip6tables -D INPUT -j NFQUEUE --queue-bypass
+  ip6tables -I INPUT -j NFQUEUE --queue-bypass
+fi
+# vim: ft=sh:
