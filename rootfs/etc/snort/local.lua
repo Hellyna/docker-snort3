@@ -32,7 +32,7 @@ ips =
     -- pulledpork normally includes local.rules in snort.rules
     -- otherwise you may add line to include local.rules too
     rules = [[
-        include $RULE_PATH/snort.rules
+        include $RULE_PATH/snort3.rules
         include $RULE_PATH/local.rules
     ]]
 }
@@ -99,3 +99,6 @@ appid =
     log_stats = true,
     app_stats_period = 60,
 }
+
+HOME_NET = [[ 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 ]]
+SHELLCODE_PORTS = [[ !80 ]]

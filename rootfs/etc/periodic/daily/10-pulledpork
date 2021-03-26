@@ -6,5 +6,5 @@ set -e
 /usr/bin/pulledpork.pl -P -c /etc/pulledpork/pulledpork.conf
 cd /etc/snort/rules
 set +e
-/usr/bin/snort2lua -c snort2.rules -r snort.rules
+/usr/bin/snort2lua -c snort.rules -r snort3.rules
 kill -SIGHUP "$(cat /var/log/snort/snort.pid)"
