@@ -100,5 +100,4 @@ appid =
     app_stats_period = 60,
 }
 
-HOME_NET = [[ 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 ]]
 SHELLCODE_PORTS = [[ !80 ]]
