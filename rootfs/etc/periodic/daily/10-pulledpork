@@ -4,4 +4,6 @@ ulimit -t 60
 
 set -e
 /usr/bin/pulledpork.pl -P -c /etc/pulledpork/pulledpork.conf
-/usr/bin/snort2lua -c /etc/snort/rules/snort.rules -r /etc/snort/rules/snort.rules
+cd /etc/snort/rules
+mv snort.rules snort2.rules
+/usr/bin/snort2lua -c /etc/snort/rules/snort2.rules -r /etc/snort/rules/snort.rules
