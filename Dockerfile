@@ -112,8 +112,8 @@ RUN echo && echo ':: Installing libdaq build dependencies' && \
     musl-dev \
     pkgconfig && \
   echo && echo ':: Getting libdaq sources' && \
-  curl -LO "https://snort.org/downloads/snortplus/libdaq-${LIBDAQ_VERSION}.tar.gz" && \
-  tar -xf "libdaq-${LIBDAQ_VERSION}.tar.gz" && \
+  curl -Lf "https://github.com/snort3/libdaq/archive/refs/tags/v${LIBDAQ_VERSION}.tar.gz" -o libdaq.tar.gz && \
+  tar -xf libdaq.tar.gz && \
   cd "libdaq-${LIBDAQ_VERSION}" && \
   echo && echo ':: Building libdaq' && \
   ./bootstrap && \
@@ -143,6 +143,8 @@ RUN apk add --no-cache \
     cmake \
     curl \
     flatbuffers-dev \
+    flex \
+    flex-dev \
     g++ \
     hyperscan-dev \
     libdnet-dev \
@@ -155,8 +157,8 @@ RUN apk add --no-cache \
     make \
     xz-dev \
     zlib-dev && \
-  curl -LO "https://snort.org/downloads/snortplus/snort3-${SNORT_VERSION}.tar.gz" && \
-  tar -xf "snort3-${SNORT_VERSION}.tar.gz" && \
+  curl -Lf "https://github.com/snort3/snort3/archive/refs/tags/${SNORT_VERSION}.tar.gz" -o snort3.tar.gz && \
+  tar -xf snort3.tar.gz && \
   cd "snort3-${SNORT_VERSION}" && \
   ./configure_cmake.sh \
     --prefix=/usr \
@@ -181,6 +183,8 @@ RUN apk add --no-cache \
     cmake \
     curl \
     flatbuffers-dev \
+    flex \
+    flex-dev \
     g++ \
     hyperscan-dev \
     libdnet-dev \
