@@ -95,7 +95,7 @@ RUN apk add --no-cache \
     pkgconfig && \
   cd && rm -rf hwloc-*
 
-ENV LIBDAQ_VERSION=3.0.0
+ENV LIBDAQ_VERSION=3.0.3
 RUN echo && echo ':: Installing libdaq build dependencies' && \
   apk add --no-cache \
     autoconf \
@@ -138,7 +138,7 @@ RUN echo && echo ':: Installing libdaq build dependencies' && \
   echo && echo ':: Cleaning up sources' && \
   cd && rm -rf libdaq-*
 
-ENV SNORT_VERSION=3.1.0.0
+ENV SNORT_VERSION=3.1.4.0
 RUN apk add --no-cache \
     cmake \
     curl \
@@ -195,7 +195,7 @@ RUN apk add --no-cache \
     zlib-dev && \
   cd && rm -rf snort3-*
 
-ENV SNORT_OPENAPPID=16584
+ENV SNORT_OPENAPPID=17843
 RUN apk add --no-cache curl && \
   curl -L "https://snort.org/downloads/openappid/${SNORT_OPENAPPID}" \
     -o "snort-openappid-${SNORT_OPENAPPID}.tar.gz" && \
